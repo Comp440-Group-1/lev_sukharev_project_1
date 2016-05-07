@@ -1,0 +1,32 @@
+USE [s16guest42]
+GO
+
+/****** Object:  Table [dbo].[software]    Script Date: 5/7/2016 12:18:42 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[software](
+	[software_id] [int] IDENTITY(1,1) NOT NULL,
+	[software_name] [varchar](50) NOT NULL,
+	[software_description] [varchar](200) NOT NULL,
+ CONSTRAINT [PK_software] PRIMARY KEY CLUSTERED 
+(
+	[software_id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+ CONSTRAINT [UK_software_name] UNIQUE NONCLUSTERED 
+(
+	[software_name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
